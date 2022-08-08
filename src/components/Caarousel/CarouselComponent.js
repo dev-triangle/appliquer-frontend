@@ -28,7 +28,7 @@ const CarouselComponent = () => {
         />
         <Carousel.Caption style = {{background:"rgba(0, 0, 0, 0.5)"}}>
           <h3>{item.company_name}<span/>,{item.job_name}</h3>
-          <p>This is a safe and non-toxic social media platform, open to all regradless of their gender identity</p>
+          <p>This is a job application portal</p>
         </Carousel.Caption>
       </Carousel.Item>
       )

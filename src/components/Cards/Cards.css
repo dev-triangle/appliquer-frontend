@@ -17,7 +17,7 @@
   background: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);
 }*/
 
-.container {
+.card_container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -51,6 +51,7 @@ background: linear-gradient(to right, #FFFFFF, #ECE9E6);
   display: flex;
   flex-direction: column;
   gap: .5rem;
+  text-align: left;
 }
 
 
@@ -106,3 +107,81 @@ background: linear-gradient(to bottom, #ef473a, #cb2d3e);
 .user__info > small {
   color: #666;
 }
+
+/* btn */
+
+
+
+
+
+
+
+@media (min-width: 417px) and (max-width: 567px) {
+	h1 {
+		font-size: 2em;
+	}
+}
+
+@media (min-width: 568px) {
+	h1 {
+		font-size: 3em;
+	}
+}
+
+.apply_container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+	.buttons {
+		display: flex;
+		flex-direction: column;
+	}
+	
+		a {
+			padding: 15px 20px;
+			font: 13px 'Montserrat', sans-serif;;
+			font-weight: 700;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			text-decoration: none;
+			text-align: center;
+			margin: 1em;
+		}
+
+		a:hover {
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20), 0 6px 20px 0 rgba(0, 0, 0, 0.20);
+		}
+	
+	@media (min-width: 417px) and (max-width: 567px) {
+		a {
+			padding: 15px 30px;
+			font: 16px 'Montserrat', sans-serif;;
+		}
+	}
+		
+	@media (min-width: 568px) {
+		a {
+			padding: 15px 50px;
+			font: 20px 'Montserrat', sans-serif;;
+		}
+	}
+
+
+
+.button2 {
+	color: black;
+	background-color: #10FFB4;
+	transition: .2s ease-in-out;
+	border-left: 3px transparent solid;
+	border-right: 3px transparent solid;
+}
+
+.button2:hover {
+	color: #10FFB4;
+	background-color: black;
+	border-left: #10FFB4 3px solid;
+	border-right: #10FFB4 3px solid;
+}
+

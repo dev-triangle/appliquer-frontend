@@ -18,32 +18,38 @@ const handleSubmit=(e)=>{
 
 
   return (
-    <div>
+    
+   
+
+    <div class="card_container">
     {jobs.map((job)=>{
       
 
-    console.log(job);
-    return(
-
-    <div class="container">
+      console.log(job);
+      return(
   <div class="card">
     <div class="card__header">
-      <img src="https://source.unsplash.com/600x400/?computer" alt="card__image" class="card__image" width="600"/>
+      <img src={job.image} alt="card__image" class="card__image" width="600"/>
     </div>
     <div class="card__body">
-      <span class="tag tag-blue">{job.job_name}</span>
-      <h4>{jobs.company_name}</h4>
-      <p>ivade job_desc</p>
-      <ul>
-        <li>ivade skills oronum ittamathi bullet points aayitu</li>
-        <li>ithellam jobs array il indatto</li>
-      </ul>
+      <strong>{job.job_name}</strong>
+
+      <h4>{job.company_name}</h4>
+      <p>{job.desc}</p>
+    
     </div>
-    <div class="card__footer">
-     <button>Apply</button>
+    <div className="card__footer">
+   
+    <div className="apply_container">
+      <div className="buttons">
+        
+        <button className="button2" target="_blank" rel="noopener">Apply</button>
+       
+      </div>
+    </div>
     </div>
   </div>
-  </div>)
+  )
 })}
 </div>
   )
