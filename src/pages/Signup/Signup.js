@@ -10,13 +10,23 @@ function Signup() {
     const[username,setUsername]=useState("");
     const[password,setPassword]=useState("");
 
-    const handlesubmit = (e)=>{
+    const handlesubmit = async(e)=>{
         e.preventDefault()
-         axios.post(`${baseUrl}/register/`,{
+       await axios.post(`${baseUrl}/register/`,{
             email : email,
             username:username,
             password:password
-        })
+        }).then((Response)=>{
+            if(Response.status==201)
+      { axios.post(`${baseUrl}/api/token/`,{
+        email: email,
+        password: password
+
+
+
+       })}
+       
+       })
     }
 
 
