@@ -19,8 +19,11 @@ function Signup() {
             </div>
             <div className="login_container">
             <div class="login_form">
-                <h2>Login Form</h2>
+                <h2>SignUp Form</h2>
                 <form>
+                <div class="login_inputBox">
+                        <input type="text" placeholder="Email"/>
+                    </div>
                     <div class="login_inputBox">
                         <input type="text" placeholder="Username"/>
                     </div>
@@ -28,10 +31,9 @@ function Signup() {
                         <input type="password" placeholder="Password"/>
                     </div>
                     <div class="login_inputBox">
-                        <input type="submit" value="Login"/>
+                        <input type="submit" value="SignUp"/>
                     </div>
-                    <p class="forget">Forgot Password ? <a className='ah' href="#">Click Here</a></p>
-                    <p class="forget">Don't have an account ? <a className='ah' href="#">Sign Up</a></p>
+                    
                 </form>
             </div>
         </div>

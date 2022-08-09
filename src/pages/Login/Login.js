@@ -21,7 +21,7 @@ function Login() {
                 <h2>Login Form</h2>
                 <form>
                     <div class="login_inputBox">
-                        <input type="text" placeholder="Username"/>
+                        <input type="text" placeholder="Email"/>
                     </div>
                     <div class="login_inputBox">
                         <input type="password" placeholder="Password"/>
