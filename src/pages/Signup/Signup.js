@@ -10,8 +10,13 @@ function Signup() {
     const[username,setUsername]=useState("");
     const[password,setPassword]=useState("");
 
-    handlesubmit=async()=>{
-        await axios.post(`${baseUrl}/register/`,{username})
+    const handlesubmit = (e)=>{
+        e.preventDefault()
+         axios.post(`${baseUrl}/register/`,{
+            email : email,
+            username:username,
+            password:password
+        })
     }
 
 
@@ -31,12 +36,12 @@ function Signup() {
             <div className="login_container">
             <div class="login_form">
                 <h2>SignUp Form</h2>
-                <form onSubmit={handlesubmit()}>
+                <form onSubmit={handlesubmit}>
                 <div class="login_inputBox">
                         <input type="text" value={email} placeholder="Email" onChange={(e)=>setEmail(e.target.value)}/>
                     </div>
                     <div class="login_inputBox">
-                        <input type="text" value={username} placeholder="Username" onChange={(e)=>setPassword(e.target.value)}/>
+                        <input type="text" value={username} placeholder="Username" onChange={(e)=>setUsername(e.target.value)}/>
                     </div>
                     <div class="login_inputBox">
                         <input type="password" value={password} placeholder="Password" onChange={(e)=>setPassword(e.target.value)}/>
