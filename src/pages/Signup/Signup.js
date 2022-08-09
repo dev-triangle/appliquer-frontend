@@ -30,8 +30,8 @@ function Signup() {
                     <div class="login_inputBox">
                         <input type="submit" value="Login"/>
                     </div>
-                    <p class="forget">Forgot Password ? <a href="#">Click Here</a></p>
-                    <p class="forget">Don't have an account ? <a href="#">Sign Up</a></p>
+                    <p class="forget">Forgot Password ? <a className='ah' href="#">Click Here</a></p>
+                    <p class="forget">Don't have an account ? <a className='ah' href="#">Sign Up</a></p>
                 </form>
             </div>
         </div>

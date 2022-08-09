@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 
-*,
-*::before,
-*::after {
+.card_container,
+.card_container::before,
+.card_container::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -139,7 +139,7 @@ background: linear-gradient(to bottom, #ef473a, #cb2d3e);
 		flex-direction: column;
 	}
 	
-		a {
+/*		a {
 			padding: 15px 20px;
 			font: 13px 'Montserrat', sans-serif;;
 			font-weight: 700;
@@ -167,7 +167,7 @@ background: linear-gradient(to bottom, #ef473a, #cb2d3e);
 			font: 20px 'Montserrat', sans-serif;;
 		}
 	}
-
+*/
 
 
 .button2 {
