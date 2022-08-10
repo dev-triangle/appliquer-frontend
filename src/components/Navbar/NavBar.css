@@ -9,7 +9,11 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+.nav__title{
+  color: rgb(110, 7, 110);
+  font-family: 'Oleo Script Swash Caps';
 
+}
 .navcontainer {
   max-width: 1050px;
   width: 90%;
@@ -20,6 +24,8 @@ body {
 
 .navbar {
   width: 100%;
+  z-index: 10;
+  width: 100vw;
   box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
 }
 
@@ -28,6 +34,10 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 62px;
+}
+.menu-items{
+  background-color: #ffff;
+  width: 100vw;
 }
 
 .navbar .menu-items {
