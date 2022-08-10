@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Login/Loginsignup.css'
 import axios from 'axios';
+import axiosInstance from '../../axios';
 
 function Login() {
     const navigate=useNavigate();
@@ -13,6 +14,10 @@ function Login() {
 
     const handleLogin=(e)=>{
         e.preventDefault();
+        axiosInstance.post(`api/token/`,{
+            "email": email,
+            "password": password
+        })
         
     }
   return (
