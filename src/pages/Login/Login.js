@@ -1,13 +1,22 @@
 import React from 'react'
-
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../Login/Loginsignup.css'
+import axios from 'axios';
 
 function Login() {
+    const navigate=useNavigate();
+
+    const[email, setEmail]=useState("");
+    
+    const[password,setPassword]=useState("");
+
     const handleLogin=(e)=>{
-        e.preventDefault()
+        e.preventDefault();
         
     }
   return (
+
     <div className='login1_container'>
     <section className='login_section'>
         <div class="color"></div>
@@ -25,10 +34,10 @@ function Login() {
                 <h2>Login Form</h2>
                 <form onSubmit={handleLogin}>
                     <div class="login_inputBox">
-                        <input type="text" placeholder="Email"/>
+                        <input type="text" value={email} placeholder="Email" onChange={(e)=>setEmail(e.target.value)}/>
                     </div>
                     <div class="login_inputBox">
-                        <input type="password" placeholder="Password"/>
+                        <input type="password" placeholder="Password" onChange={(e)=>setPassword(e.target.value)}/>
                     </div>
                     <div class="login_inputBox">
                         <input type="submit" value="Login"/>

@@ -23,7 +23,7 @@ function Signup() {
         }).then((Response)=>{
             console.log(Response)
             if(Response.status===201){
-              navigate('/home')
+              navigate('/login')
             }
       
        
