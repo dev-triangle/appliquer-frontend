@@ -3,11 +3,13 @@ import axios from 'axios'
 import baseUrl from './utils/urls'
 import axiosInstance from './axios'
 
+
 const AppContext = React.createContext()
 const AppProvider = ({ children }) => {
-    const [loading, setLoading] = useState(false);
+    const [loggedin, setLoggedin] = useState(false);
     const [searchTerm,setSearchTerm]= useState('a')
     const [jobs,setJobs]= useState([])
+
 
     const fetchjobs=()=>{
       axios.defaults.withCredentials=true
@@ -44,7 +46,8 @@ const AppProvider = ({ children }) => {
       },[])*/
 
     return <AppContext.Provider value={{
-        loading,
+        loggedin,
+        setLoggedin,
         jobs,
         setJobs,
         

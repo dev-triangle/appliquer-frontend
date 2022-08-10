@@ -4,8 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import '../Login/Loginsignup.css'
 import axios from 'axios';
 import axiosInstance from '../../axios';
+import {useGlobalContext} from '../../Context'
 
 function Login() {
+    const {loggedin,setLoggedin} =useGlobalContext()
     const navigate=useNavigate();
 
     const[email, setEmail]=useState("");
@@ -23,7 +25,9 @@ function Login() {
             localStorage.setItem('refresh_token',res.data.refresh);
             axiosInstance.defaults.headers['Authorization']= 'Bearer ' + localStorage.getItem('access_token');
         
-        }).then(()=>navigate('/home'))
+        }).then(()=>
+        { setLoggedin(true)
+        navigate('/home')})
         .catch(error=>console.log(error))
         
     }

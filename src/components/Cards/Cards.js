@@ -8,16 +8,19 @@ import axiosInstance from '../../axios'
 
 function Cards() {
 const [jobs,setJobs]= useState([]);
+const {loggedin,setLoggedin} =useGlobalContext()
 
 const handleSubmit=(e)=>{
   console.log(e);
 
   
 }
+
 useEffect(()=>{
+  if(loggedin==true){
   axiosInstance.get('http://127.0.0.1:8000/jobs/').then((res)=>{
     setJobs(res.data);
-  }).catch(error=>console.log(error))
+   } ).catch(error=>console.log(error))}
 },[])
 
 

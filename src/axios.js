@@ -14,7 +14,7 @@ const axiosInstance= axios.create({
     }
 })
 
-/*axiosInstance.interceptors.response.use(
+axiosInstance.interceptors.response.use(
 	(response) => {
 		return response;
 	},
@@ -32,7 +32,7 @@ const axiosInstance= axios.create({
 
 		if (
 			error.response.status === 401 &&
-			originalRequest.url === baseUrl + 'token/refresh/'
+			originalRequest.url === baseUrl + '/api/token/refresh/'
 		) {
 			window.location.href = '/login/';
 			return Promise.reject(error);
@@ -60,9 +60,9 @@ const axiosInstance= axios.create({
 							localStorage.setItem('refresh_token', response.data.refresh);
 
 							axiosInstance.defaults.headers['Authorization'] =
-								'JWT ' + response.data.access;
+								'Bearer ' + response.data.access;
 							originalRequest.headers['Authorization'] =
-								'JWT ' + response.data.access;
+								'Bearer ' + response.data.access;
 
 							return axiosInstance(originalRequest);
 						})
@@ -82,7 +82,7 @@ const axiosInstance= axios.create({
 		// specific error handling done elsewhere
 		return Promise.reject(error);
 	}
-);*/
+);
 
 
 
