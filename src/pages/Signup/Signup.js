@@ -2,10 +2,14 @@ import React from 'react'
 import axios from 'axios'
 import baseUrl from '../../utils/urls'
 import { useState } from 'react'
+import { useNavigate} from 'react-router-dom'
+
 
 import '../Login/Loginsignup.css'
 
 function Signup() {
+    const navigate = useNavigate()
+  
     const[email, setEmail]=useState("");
     const[username,setUsername]=useState("");
     const[password,setPassword]=useState("");
@@ -19,16 +23,7 @@ function Signup() {
         }).then((Response)=>{
             console.log(Response)
             if(Response.status===201){
-                axios.post(`${baseUrl}/api/token/`,{
-                    "email":email,
-                    "password":password
-                }).then((res)=>{
-                    console.log(res)
-                    if(res.status===200){
-                        window.location.assign('/home')
-                        
-                    }
-                })
+              navigate('/home')
             }
       
        
