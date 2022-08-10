@@ -17,10 +17,11 @@ const handleSubmit=(e)=>{
 }
 
 useEffect(()=>{
-  if(loggedin==true){
+  //if(loggedin==true){
   axiosInstance.get('http://127.0.0.1:8000/jobs/').then((res)=>{
     setJobs(res.data);
-   } ).catch(error=>console.log(error))}
+    console.log(localStorage.getItem('access_token'))
+   } ).catch(error=>console.log(error))
 },[])
 
 
