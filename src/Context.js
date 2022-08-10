@@ -9,6 +9,7 @@ const AppProvider = ({ children }) => {
     const [jobs,setJobs]= useState([])
 
     const fetchjobs=()=>{
+      axios.defaults.withCredentials=true
         try{
             axios.get(`${baseUrl}/jobs/`).then(res=>{
                 setJobs(res.data);

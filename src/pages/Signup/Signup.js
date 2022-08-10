@@ -13,18 +13,24 @@ function Signup() {
     const handlesubmit = async(e)=>{
         e.preventDefault()
        await axios.post(`${baseUrl}/register/`,{
-            email : email,
-            username:username,
-            password:password
+            "email" : email,
+            "username":username,
+            "password":password
         }).then((Response)=>{
-            if(Response.status==201)
-      { axios.post(`${baseUrl}/api/token/`,{
-        email: email,
-        password: password
-
-
-
-       })}
+            console.log(Response)
+            if(Response.status===201){
+                axios.post(`${baseUrl}/api/token/`,{
+                    "email":email,
+                    "password":password
+                }).then((res)=>{
+                    console.log(res)
+                    if(res.status===200){
+                        window.location.assign('/home')
+                        
+                    }
+                })
+            }
+      
        
        })
     }
