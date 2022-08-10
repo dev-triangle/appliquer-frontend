@@ -3,6 +3,10 @@ import React from 'react'
 import '../Login/Loginsignup.css'
 
 function Login() {
+    const handleLogin=(e)=>{
+        e.preventDefault()
+        
+    }
   return (
     <div className='login1_container'>
     <section className='login_section'>
@@ -19,7 +23,7 @@ function Login() {
             <div className="login_container">
             <div class="login_form">
                 <h2>Login Form</h2>
-                <form>
+                <form onSubmit={handleLogin}>
                     <div class="login_inputBox">
                         <input type="text" placeholder="Email"/>
                     </div>
