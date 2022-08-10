@@ -3,18 +3,22 @@ import './Cards.css'
 import {useGlobalContext} from '../../Context'
 import baseUrl from '../../utils/urls'
 import axios from 'axios'
-
+import axiosInstance from '../../axios'
 
 
 function Cards() {
-const {jobs,setJobs}= useGlobalContext();
+const [jobs,setJobs]= useState([]);
 
 const handleSubmit=(e)=>{
   console.log(e);
 
   
 }
-
+useEffect(()=>{
+  axiosInstance.get('http://127.0.0.1:8000/jobs/').then((res)=>{
+    setJobs(res.data);
+  }).catch(error=>console.log(error))
+},[])
 
 
   return (

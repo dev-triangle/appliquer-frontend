@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react'
 import axios from 'axios'
 import baseUrl from './utils/urls'
+import axiosInstance from './axios'
 
 const AppContext = React.createContext()
 const AppProvider = ({ children }) => {
@@ -23,8 +24,13 @@ const AppProvider = ({ children }) => {
         }
 
     }
+  /*  useEffect(()=>{
+      axiosInstance.get('http://127.0.0.1:8000/jobs/').then(res=>{
+        setJobs(res.data);
+      })
+    },[])*/
    
-    useEffect(()=>{
+   /* useEffect(()=>{
         
         axios.get(`${baseUrl}/jobs/`).then((response)=>{
           console.log(response.data)
@@ -35,7 +41,7 @@ const AppProvider = ({ children }) => {
           console.log(error)
         })
       
-      },[])
+      },[])*/
 
     return <AppContext.Provider value={{
         loading,

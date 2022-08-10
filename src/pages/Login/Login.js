@@ -14,10 +14,17 @@ function Login() {
 
     const handleLogin=(e)=>{
         e.preventDefault();
-        axiosInstance.post(`api/token/`,{
+        axiosInstance.post(`http://127.0.0.1:8000/api/token/`,{
             "email": email,
-            "password": password
-        })
+            "password" : password
+        }).then((res)=>{
+            console.log(res)
+            localStorage.setItem('access_token',res.data.access);
+            localStorage.setItem('refresh_token',res.data.refresh);
+            axiosInstance.defaults.headers['Authorization']= 'Bearer ' + localStorage.getItem('access_token');
+        
+        }).then(()=>navigate('/home'))
+        .catch(error=>console.log(error))
         
     }
   return (
