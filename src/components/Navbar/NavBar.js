@@ -1,9 +1,21 @@
 import React from 'react'
 import './NavBar.css'
 import {useGlobalContext} from '../../Context'
-import Logout from '../Logout/Logout'
+import axiosInstance from '../../axios'
+
 
 function NavBar() {
+const Logout=()=>{
+	const response = axiosInstance.post('api/token/blacklist/', {
+    refresh_token: localStorage.getItem('refresh_token'),
+  });
+  localStorage.removeItem('access_token');
+  localStorage.removeItem('refresh_token');
+  axiosInstance.defaults.headers['Authorization'] = null;
+  console.log("user logged out")
+      
+};
+
   const {loggedin, setLoggedin}=useGlobalContext()
   return (
     <body>
@@ -23,7 +35,7 @@ function NavBar() {
             <li ><a href="/home">Home</a></li>
             <li><a href="#">Dashboard</a></li>
            
-            <li><a onClick={<Logout/>} href="\login">{ loggedin==true ? "logout":""}</a></li>
+            <li><a onClick={Logout} href="#">{ loggedin==true ? "logout":""}</a></li>
             
           </div>
         </div>

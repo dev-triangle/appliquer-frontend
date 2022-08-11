@@ -12,7 +12,7 @@ const AppProvider = ({ children }) => {
 
     useEffect(()=>{
       if(localStorage.getItem('access_token'))
-      {
+      {console.log(localStorage.getItem('access_token'))
         setLoggedin(true)
       }
     })
