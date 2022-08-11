@@ -27,7 +27,12 @@ function Login() {
         
         }).then(()=>
         { setLoggedin(true)
-        navigate('/home')})
+        navigate('/home')}).then(()=>{
+            axiosInstance.get(`http://127.0.0.1:8000/current-user/`).then((res)=>{
+                const userid=res.data.id;
+                console.log(userid)
+            }).catch(error=>console.log(error))
+        })
         .catch(error=>console.log(error))
         
     }
