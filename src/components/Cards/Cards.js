@@ -11,6 +11,7 @@ const [jobs,setJobs]= useState([]);
 const [datee,setdatee]=useState("");
 const {loggedin,setLoggedin} =useGlobalContext()
 
+
 const handleSubmit=(e)=>{
   console.log(e);
 
@@ -59,8 +60,8 @@ useEffect(()=>{
           axiosInstance.post('http://127.0.0.1:8000/application/',{
             "date_of_application": datee,
             "status": false,
-            "user_foreign": null,
-            "job_foreign": job.id
+            "user_foreign": localStorage.getItem('user-id'),
+            "job_foreign": job.id,
           }).then((res)=>{
     setJobs(res.data);
     console.log(localStorage.getItem('access_token'))

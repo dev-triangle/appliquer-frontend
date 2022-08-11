@@ -9,6 +9,7 @@ const AppProvider = ({ children }) => {
     const [loggedin, setLoggedin] = useState(false);
     const [searchTerm,setSearchTerm]= useState('a')
     const [jobs,setJobs]= useState([])
+    const [userid,setUserid]=useState()
 
     useEffect(()=>{
       if(localStorage.getItem('access_token'))
@@ -57,6 +58,8 @@ const AppProvider = ({ children }) => {
         setLoggedin,
         jobs,
         setJobs,
+        userid,
+        setUserid
         
     }}>{children}</AppContext.Provider>
 }
