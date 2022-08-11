@@ -35,7 +35,7 @@ const Logout=()=>{
             <li ><a href="/home">Home</a></li>
             <li><a href="#">Dashboard</a></li>
            
-            <li><a onClick={Logout} href="#">{ loggedin==true ? "logout":""}</a></li>
+            <li><a onClick={()=>{if(loggedin==true)Logout()}} href="\login">{ loggedin==true ? "logout":""}</a></li>
             
           </div>
         </div>
