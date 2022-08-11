@@ -1,7 +1,9 @@
 import React from 'react'
 import './NavBar.css'
+import {useGlobalContext} from '../../Context'
 
 function NavBar() {
+  const {loggedin, setLoggedin}=useGlobalContext()
   return (
     <body>
     <nav>
@@ -17,11 +19,11 @@ function NavBar() {
             <h1 className='nav__title'>Appliquer</h1>
           </div>
           <div class="menu-items">
-            <li><a href="/home">Home</a></li>
+            <li ><a href="/home">Home</a></li>
             <li><a href="#">Dashboard</a></li>
-            <li><a href="#">blogs</a></li>
-            <li><a href="#">portfolio</a></li>
-            <li><a href="#">contact</a></li>
+           
+            <li><a href="#">{ loggedin==true ? "logout":""}</a></li>
+            
           </div>
         </div>
       </div>
