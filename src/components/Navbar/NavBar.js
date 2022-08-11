@@ -17,8 +17,8 @@ function NavBar() {
             <h1 className='nav__title'>Appliquer</h1>
           </div>
           <div class="menu-items">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">about</a></li>
+            <li><a href="/home">Home</a></li>
+            <li><a href="#">Dashboard</a></li>
             <li><a href="#">blogs</a></li>
             <li><a href="#">portfolio</a></li>
             <li><a href="#">contact</a></li>

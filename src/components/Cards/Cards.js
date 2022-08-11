@@ -8,6 +8,7 @@ import axiosInstance from '../../axios'
 
 function Cards() {
 const [jobs,setJobs]= useState([]);
+const [date,setdate]=useState("")
 const {loggedin,setLoggedin} =useGlobalContext()
 
 const handleSubmit=(e)=>{
@@ -51,7 +52,23 @@ useEffect(()=>{
     <div className="apply_container">
       <div className="buttons">
         
-        <button className="button2" target="_blank" rel="noopener">Apply</button>
+        <button className="button2" target="_blank" rel="noopener" onClick={()=>{
+          var today=new Date();
+
+          axiosInstance.post('http://127.0.0.1:8000/application/',{
+            "date_of_application": Date.now(),
+            "status": false,
+            "user_foreign": null,
+            "job_foreign": job.id
+          }).then((res)=>{
+    setJobs(res.data);
+    console.log(localStorage.getItem('access_token'))
+   } ).catch((error)=>{
+    console.log(error)
+    alert("Please login");
+  })
+
+        }} >Apply</button>
        
       </div>
     </div>
