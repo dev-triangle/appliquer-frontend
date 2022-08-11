@@ -6,6 +6,7 @@ import {useNavigate} from 'react-router-dom'
 
 
 function NavBar() {
+const navigate=useNavigate();
 const Logout=()=>{
 	const response = axiosInstance.post('api/token/blacklist/', {
     refresh_token: localStorage.getItem('refresh_token'),
@@ -23,16 +24,24 @@ const Logout=()=>{
     <nav>
       <div class="navbar">
         <div class="navcontainer nav-container">
+
+        
             <input class="checkbox" type="checkbox" name="" id="" />
             <div class="hamburger-lines">
               <span class="line line1"></span>
               <span class="line line2"></span>
               <span class="line line3"></span>
-            </div>  
+            </div>
+
+            <div className='title_login'>
           <div class="logo">
             <h1 className='nav__title'>Appliquer</h1>
           </div>
-          <div className='glow-on-hover' onClick={} >Login</div>
+          <div className='glow-on-hover' onClick={()=> navigate('/login') } >Login
+          </div>
+          </div>
+          
+
           <div class="menu-items">
             <li ><a href="/home">Home</a></li>
             <li><a href="#">Dashboard</a></li>
