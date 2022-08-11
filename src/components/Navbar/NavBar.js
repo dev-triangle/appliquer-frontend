@@ -31,6 +31,7 @@ const Logout=()=>{
           <div class="logo">
             <h1 className='nav__title'>Appliquer</h1>
           </div>
+          <div className='glow-on-hover'>Login</div>
           <div class="menu-items">
             <li ><a href="/home">Home</a></li>
             <li><a href="#">Dashboard</a></li>
