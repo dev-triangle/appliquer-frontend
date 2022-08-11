@@ -2,6 +2,7 @@ import React from 'react'
 import './NavBar.css'
 import {useGlobalContext} from '../../Context'
 import axiosInstance from '../../axios'
+import {useNavigate} from 'react-router-dom'
 
 
 function NavBar() {
@@ -31,7 +32,7 @@ const Logout=()=>{
           <div class="logo">
             <h1 className='nav__title'>Appliquer</h1>
           </div>
-          <div className='glow-on-hover'>Login</div>
+          <div className='glow-on-hover' onClick={} >Login</div>
           <div class="menu-items">
             <li ><a href="/home">Home</a></li>
             <li><a href="#">Dashboard</a></li>
