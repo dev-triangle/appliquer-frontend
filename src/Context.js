@@ -10,6 +10,13 @@ const AppProvider = ({ children }) => {
     const [searchTerm,setSearchTerm]= useState('a')
     const [jobs,setJobs]= useState([])
 
+    useEffect(()=>{
+      if(localStorage.getItem('access_token'))
+      {
+        setLoggedin(true)
+      }
+    })
+
 
     const fetchjobs=()=>{
       axios.defaults.withCredentials=true
