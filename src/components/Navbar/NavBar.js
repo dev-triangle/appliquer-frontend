@@ -39,12 +39,12 @@ const Logout=()=>{
           <div class="logo">
             <h1 className='nav__title'>Appliquer</h1>
           </div>
-          
-          {  if(loggedin== false){
-          return <div className='glow-on-hover' onClick={()=> navigate('/login') } >Login
-          </div>}
-          else{return null}
-          }
+         {
+            (loggedin===false)?
+         ( (<div className='glow-on-hover' onClick={()=> navigate('/login') } >Login
+          </div>)):
+          ((null))
+        }
           </div>
 
           </div>
