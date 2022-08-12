@@ -34,24 +34,8 @@ const AppProvider = ({ children }) => {
         }
 
     }
-  /*  useEffect(()=>{
-      axiosInstance.get('http://127.0.0.1:8000/jobs/').then(res=>{
-        setJobs(res.data);
-      })
-    },[])*/
-   
-   /* useEffect(()=>{
-        
-        axios.get(`${baseUrl}/jobs/`).then((response)=>{
-          console.log(response.data)
-          
-          setJobs(response.data)
-        
-        },(error)=>{
-          console.log(error)
-        })
-      
-      },[])*/
+
+  
 
     return <AppContext.Provider value={{
         loggedin,

@@ -55,19 +55,21 @@ useEffect(()=>{
         
         <button className="button2" target="_blank" rel="noopener" onClick={()=>{
           var today=new Date();
-         setdatee( today.getFullYear() + '-'+(today.getMonth()+1)+'-'+ today.getDate())
+          
          
           axiosInstance.post('/application/',{
-            "date_of_application": "2022-12-12",
+            "date_of_application": today,
             "status": false,
             "user_foreign": parseInt(localStorage.getItem('user-id')),
             "job_foreign": job.id,
           }).then((res)=>{
     
     console.log(res.data)
-   } ).catch((error)=>{
-    console.log(error)
+          }).catch((error)=>{
+
+    console.log(error);
     alert("Please login");
+
   })
 
         }} >Apply</button>
