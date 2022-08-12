@@ -33,6 +33,7 @@ function Login() {
                 
                 console.log(res.data.id)
                 localStorage.setItem('user-id',res.data.id)
+                localStorage.setItem('username',res.data.username)
             }).catch(error=>console.log(error))
         })
         .catch(error=>console.log(error))

@@ -39,8 +39,12 @@ const Logout=()=>{
           <div class="logo">
             <h1 className='nav__title'>Appliquer</h1>
           </div>
-          <div className='glow-on-hover' onClick={()=> navigate('/login') } >Login
-          </div>
+          
+          {  if(loggedin== false){
+          return <div className='glow-on-hover' onClick={()=> navigate('/login') } >Login
+          </div>}
+          else{return null}
+          }
           </div>
 
           </div>
