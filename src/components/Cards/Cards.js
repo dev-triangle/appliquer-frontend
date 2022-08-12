@@ -57,14 +57,14 @@ useEffect(()=>{
           var today=new Date();
          setdatee( today.getFullYear() + '-'+(today.getMonth()+1)+'-'+ today.getDate())
          
-          axiosInstance.post('http://127.0.0.1:8000/application/',{
-            "date_of_application": datee,
+          axiosInstance.post('/application/',{
+            "date_of_application": "2022-12-12",
             "status": false,
-            "user_foreign": localStorage.getItem('user-id'),
+            "user_foreign": parseInt(localStorage.getItem('user-id')),
             "job_foreign": job.id,
           }).then((res)=>{
-    setJobs(res.data);
-    console.log(localStorage.getItem('access_token'))
+    
+    console.log(res.data)
    } ).catch((error)=>{
     console.log(error)
     alert("Please login");
