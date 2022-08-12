@@ -9,6 +9,14 @@ const AppProvider = ({ children }) => {
     const [loggedin, setLoggedin] = useState(false);
     const [searchTerm,setSearchTerm]= useState('a')
     const [jobs,setJobs]= useState([])
+    const [userid,setUserid]=useState()
+
+    useEffect(()=>{
+      if(localStorage.getItem('access_token'))
+      {console.log(localStorage.getItem('access_token'))
+        setLoggedin(true)
+      }
+    })
 
 
     const fetchjobs=()=>{
@@ -26,30 +34,16 @@ const AppProvider = ({ children }) => {
         }
 
     }
-  /*  useEffect(()=>{
-      axiosInstance.get('http://127.0.0.1:8000/jobs/').then(res=>{
-        setJobs(res.data);
-      })
-    },[])*/
-   
-   /* useEffect(()=>{
-        
-        axios.get(`${baseUrl}/jobs/`).then((response)=>{
-          console.log(response.data)
-          
-          setJobs(response.data)
-        
-        },(error)=>{
-          console.log(error)
-        })
-      
-      },[])*/
+
+  
 
     return <AppContext.Provider value={{
         loggedin,
         setLoggedin,
         jobs,
         setJobs,
+        userid,
+        setUserid
         
     }}>{children}</AppContext.Provider>
 }

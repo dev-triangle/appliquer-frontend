@@ -8,6 +8,7 @@ import {useGlobalContext} from '../../Context'
 
 function Login() {
     const {loggedin,setLoggedin} =useGlobalContext()
+   
     const navigate=useNavigate();
 
     const[email, setEmail]=useState("");
@@ -27,7 +28,13 @@ function Login() {
         
         }).then(()=>
         { setLoggedin(true)
-        navigate('/home')})
+        navigate('/home')}).then(()=>{
+            axiosInstance.get(`http://127.0.0.1:8000/current-user/`).then((res)=>{
+                
+                console.log(res.data.id)
+                localStorage.setItem('user-id',res.data.id)
+            }).catch(error=>console.log(error))
+        })
         .catch(error=>console.log(error))
         
     }
