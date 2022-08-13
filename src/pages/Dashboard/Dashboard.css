@@ -1,17 +1,42 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.profileIcon{
+    width: 300px;
+    height: 300px;
+    border-radius: 142px;
+  
+}
+.dashboard__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* margin-bottom: 5rem; */
 
+}
+.child__title{
+    color: #090979;
+}
+.dash__child{
+    box-shadow: 5px 10px #888888;
+    width: 50rem;
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    /* height: 22rem; */
+    border-radius: 20px;
+    padding: 2%;
+}
+.dashcard__first{
+    display: flex;
+    flex-direction: column;
+}
+.dashcard__second{
+    display: flex;
+    flex-direction: column;
+}
 
-.dashboard_container{
-   
-    font-family: "Lato", sans-serif;
-    display: grid;
+@media (min-device-width: 20px) and (max-device-width: 500px){
+    .dash__child{
+        width: 23rem;
     }
-
-
-    
-@media screen and (max-width: 767px) {
- .dashboard_container{
-    min-width: auto;
- }
-
 }

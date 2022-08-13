@@ -4,9 +4,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} 
 
-body {
+ .nav__component{
   font-family: "Poppins", sans-serif;
 }
 .title_login{
@@ -180,6 +180,7 @@ body {
   height: 37px;
   border: none;
   outline: none;
+  text-align: center;
   color: #fff;
   background: #111;
   cursor: pointer;
