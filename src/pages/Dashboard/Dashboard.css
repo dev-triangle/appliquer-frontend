@@ -1,0 +1,42 @@
+.profileIcon{
+    width: 300px;
+    height: 300px;
+    border-radius: 142px;
+  
+}
+.dashboard__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* margin-bottom: 5rem; */
+
+}
+.child__title{
+    color: #090979;
+}
+.dash__child{
+    box-shadow: 5px 10px #888888;
+    width: 50rem;
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    /* height: 22rem; */
+    border-radius: 20px;
+    padding: 2%;
+}
+.dashcard__first{
+    display: flex;
+    flex-direction: column;
+}
+.dashcard__second{
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-device-width: 20px) and (max-device-width: 500px){
+    .dash__child{
+        width: 23rem;
+    }
+}

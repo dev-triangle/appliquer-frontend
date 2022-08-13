@@ -20,7 +20,7 @@ const Logout=()=>{
 
   const {loggedin, setLoggedin}=useGlobalContext()
   return (
-    <body>
+    <div className='nav__component'>
     <nav>
       <div class="navbar">
         <div class="navcontainer nav-container">
@@ -56,7 +56,7 @@ const Logout=()=>{
         </div>
       </div>
     </nav>
-  </body>
+  </div>
 
 
   )

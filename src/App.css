@@ -1,6 +1,7 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
   min-height: 100vh;
   overflow: hidden;
+  margin-bottom: 5rem;
 }
 
