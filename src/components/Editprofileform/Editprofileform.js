@@ -23,60 +23,54 @@ function Editprofileform() {
            onChange = { (e) => setName(e.target.value)}
             required
         />
-    </Form.Group>
+    </Form.Group><br/>
     <Form.Group>
         <Form.Control
             type="text"
-            placeholder="Email *"
+            placeholder="skills *"
             name="skills"
            value={skills}
            onChange = { (e) => setSkills(e.target.value)}
             required
         />
-    </Form.Group>
+    </Form.Group><br/>
     
    
-    <Form.Group>
-        <Form.Control
-            as="textarea"
-            placeholder="Address"
-            rows={3}
-            name="address"
-          //  value={address}
-         //   onChange = { (e) => onInputChange(e)}
-        />
-    </Form.Group>
+   
     <Form.Group>
         <Form.Control
             as="textarea"
             type="text"
             rows={3}
-            placeholder="Phone"
+            placeholder="Experience"
             name="Experience"
            value={experience}
             onChange = { (e) => setExperience(e.target.value)}
         />
-    </Form.Group>
+    </Form.Group><br/>
     <Form.Group>
     <Form.Control
+        as="textarea"
         type="text"
-        placeholder="Email *"
+        rows={3}
+        placeholder="Projects"
         name="projects"
+      
         value={project}
         onChange = { (e) => setProject(e.target.value)}
         required
     />
-</Form.Group>
+</Form.Group><br/>
 <Form.Group>
 <Form.Control
     type="text"
-    placeholder="Email *"
+    placeholder="Description"
     name="Description"
     value={description}
     onChange = { (e) => setDescription(e.target.value)}
     required
 />
-</Form.Group>
+</Form.Group><br/>
 
     <Button variant="success" type="submit" block>
         Save Changes
