@@ -57,6 +57,17 @@ function Editprofileform() {
         required
     />
 </Form.Group>
+<Form.Group>
+<Form.Control
+    type="text"
+    placeholder="Email *"
+    name="Description"
+    value={email}
+    onChange = { (e) => onInputChange(e)}
+    required
+/>
+</Form.Group>
+
     <Button variant="success" type="submit" block>
         Add New Employee
     </Button>
