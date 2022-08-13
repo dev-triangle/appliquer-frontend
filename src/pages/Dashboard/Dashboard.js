@@ -1,8 +1,15 @@
 import React from 'react'
+import NavBar from '../../components/Navbar/NavBar'
+import './Dashboard.css'
 
 function Dashboard() {
   return (
-    <div>Dashboard</div>
+    <div>
+    <NavBar/>
+    <div className='dashboard_container'>
+     <div className='profile_sidebar'></div>
+    </div>
+    </div>
   )
 }
 

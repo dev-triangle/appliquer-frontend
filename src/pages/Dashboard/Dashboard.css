@@ -1,0 +1,41 @@
+.dashboard_container{
+   
+        --color-primary: #1ba94c;
+        --color-primary-dark: #068932;
+        --color-error: #d11534;
+        --color-bg: #f3f7f7;
+        --color-bg-2: #e7eeef;
+        --color-white: #fff;
+        --color-link: #097bbf;
+        --color-shade-lighter: #f3f7f7;
+        --color-shade-lighter-2: #f3f7f7;
+        --color-shade-light: #e7eeef;
+        --color-shade-medium: #b7c9cc;
+        --color-shade-medium-2: #b7c9cc;
+        --color-shade-dark: #738f93;
+        --color-shade-darker: #0e141e;
+        --color-text-light: #b7c9cc;
+        --color-text-medium-dark: #39424e;
+        --color-text-dark: #0e141e;
+        --color-text-dark-faded: #576871;
+        --modal-overlay-color: rgba(231,238,239,0.9);
+        --active-tab-color: #000;
+        --select-border-color: #b3b3b3;
+        --shadow-border: 0.1px 1px 4px 0 #e7eeef;
+        --card-shadow-1: #fff;
+        --card-shadow-2: #fff;
+        background-color: rgba(231,238,239,0.9);
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        max-width: 1240px;
+    }
+
+
+    
+@media screen and (max-width: 767px) {
+ .dashboard_container{
+    min-width: auto;
+ }
+
+}
