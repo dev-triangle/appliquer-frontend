@@ -1,7 +1,16 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import {useState} from 'react'
 
 function Editprofileform() {
+
+    const [name,setName] =useState("");
+    const [skills,setSkills]=useState("");
+    const [experience,setExperience]=useState([]);
+    const [project,setProject]=useState([]);
+    const [description,setDescription]=useState("");
+
+
     const handleSubmit=()=>{}
   return (
     <Form onSubmit={handleSubmit}>
@@ -10,8 +19,8 @@ function Editprofileform() {
             type="text"
             placeholder="Name *"
             name="name"
-            value={name}
-            onChange = { (e) => onInputChange(e)}
+           // value={name}
+        //    onChange = { (e) => onInputChange(e)}
             required
         />
     </Form.Group>
@@ -20,8 +29,8 @@ function Editprofileform() {
             type="text"
             placeholder="Email *"
             name="skills"
-            value={email}
-            onChange = { (e) => onInputChange(e)}
+          //  value={email}
+          //  onChange = { (e) => onInputChange(e)}
             required
         />
     </Form.Group>
@@ -33,8 +42,8 @@ function Editprofileform() {
             placeholder="Address"
             rows={3}
             name="address"
-            value={address}
-            onChange = { (e) => onInputChange(e)}
+          //  value={address}
+         //   onChange = { (e) => onInputChange(e)}
         />
     </Form.Group>
     <Form.Group>
@@ -44,8 +53,8 @@ function Editprofileform() {
             rows={3}
             placeholder="Phone"
             name="Experience"
-            value={phone}
-            onChange = { (e) => onInputChange(e)}
+          //  value={phone}
+          //  onChange = { (e) => onInputChange(e)}
         />
     </Form.Group>
     <Form.Group>
@@ -53,8 +62,8 @@ function Editprofileform() {
         type="text"
         placeholder="Email *"
         name="projects"
-        value={email}
-        onChange = { (e) => onInputChange(e)}
+      //  value={email}
+     //   onChange = { (e) => onInputChange(e)}
         required
     />
 </Form.Group>
@@ -63,8 +72,8 @@ function Editprofileform() {
     type="text"
     placeholder="Email *"
     name="Description"
-    value={email}
-    onChange = { (e) => onInputChange(e)}
+   // value={email}
+   // onChange = { (e) => onInputChange(e)}
     required
 />
 </Form.Group>
