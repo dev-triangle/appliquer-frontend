@@ -19,8 +19,8 @@ function Editprofileform() {
             type="text"
             placeholder="Name *"
             name="name"
-           // value={name}
-        //    onChange = { (e) => onInputChange(e)}
+            value={name}
+           onChange = { (e) => setName(e.target.value)}
             required
         />
     </Form.Group>
@@ -29,8 +29,8 @@ function Editprofileform() {
             type="text"
             placeholder="Email *"
             name="skills"
-          //  value={email}
-          //  onChange = { (e) => onInputChange(e)}
+           value={skills}
+           onChange = { (e) => setSkills(e.target.value)}
             required
         />
     </Form.Group>
@@ -53,8 +53,8 @@ function Editprofileform() {
             rows={3}
             placeholder="Phone"
             name="Experience"
-          //  value={phone}
-          //  onChange = { (e) => onInputChange(e)}
+           value={experience}
+            onChange = { (e) => setExperience(e.target.value)}
         />
     </Form.Group>
     <Form.Group>
@@ -62,8 +62,8 @@ function Editprofileform() {
         type="text"
         placeholder="Email *"
         name="projects"
-      //  value={email}
-     //   onChange = { (e) => onInputChange(e)}
+        value={project}
+        onChange = { (e) => setProject(e.target.value)}
         required
     />
 </Form.Group>
@@ -72,14 +72,14 @@ function Editprofileform() {
     type="text"
     placeholder="Email *"
     name="Description"
-   // value={email}
-   // onChange = { (e) => onInputChange(e)}
+    value={description}
+    onChange = { (e) => setDescription(e.target.value)}
     required
 />
 </Form.Group>
 
     <Button variant="success" type="submit" block>
-        Add New Employee
+        Save Changes
     </Button>
 </Form>
 
