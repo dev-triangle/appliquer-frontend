@@ -1,7 +1,12 @@
 import React from 'react'
 import './Dashboard.css'
+import {Modal,Button} from 'react-bootstrap'
+import Editprofileform from '../../components/Editprofileform/Editprofileform'
+import { useState } from 'react'
 import NavBar from '../../components/Navbar/NavBar'
 const Dashboard = () => {
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
   return (
     <div>
         <NavBar/>
@@ -51,6 +56,21 @@ const Dashboard = () => {
            
 
         </div>
+        <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+            <Modal.Title>
+                Edit profile
+            </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+            <Editprofileform />
+        </Modal.Body>
+        <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                    Close Button
+                </Button>
+        </Modal.Footer>
+    </Modal>
     </div>
   )
 }
