@@ -39,8 +39,12 @@ const Logout=()=>{
           <div class="logo">
             <h1 className='nav__title'>Appliquer</h1>
           </div>
-          <div className='glow-on-hover' onClick={()=> navigate('/login') } >Login
-          </div>
+         {
+            (loggedin===false)?
+         ( (<div className='glow-on-hover' onClick={()=> navigate('/login') } >Login
+          </div>)):
+          ((null))
+        }
           </div>
 
           </div>
@@ -48,9 +52,10 @@ const Logout=()=>{
 
           <div class="menu-items">
             <li ><a href="/home">Home</a></li>
-            <li><a href="#">Dashboard</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
            
             <li><a onClick={()=>{if(loggedin==true)Logout()}} href="\login">{ loggedin==true ? "logout":""}</a></li>
+            
             
           </div>
         </div>

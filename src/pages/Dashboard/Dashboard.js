@@ -1,9 +1,10 @@
 import React from 'react'
 import './Dashboard.css'
-
+import NavBar from '../../components/Navbar/NavBar'
 const Dashboard = () => {
   return (
     <div>
+        <NavBar/>
         <div className='dashboard__container'>
             <div className=""><img className='profileIcon' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZQ-vYtz1gSxWB3QvtAU5sQ3ARMfwQpi-tJcIfumC4&s" alt="" srcset="" />
             </div>
