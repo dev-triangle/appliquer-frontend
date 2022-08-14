@@ -59,7 +59,7 @@ useEffect(()=>{
          
           axiosInstance.post('/application/',{
             "date_of_application": today,
-            "status": false,
+            "username": localStorage.getItem('username'),
             "user_foreign": parseInt(localStorage.getItem('user-id')),
             "job_foreign": job.id,
           }).then((res)=>{
