@@ -11,7 +11,7 @@ const Dashboard = () => {
   
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
-    const {dob,setDob,github,setGithub,inkedin,setLinkedin,description,setDescription,project,setProject,experience,setExperience,
+    const {dob,setDob,github,setGithub,linkedin,setLinkedin,description,setDescription,project,setProject,experience,setExperience,
         skills,setSkills,name,setName,email,setEmail}=useGlobalContext()
   return (
 
@@ -25,20 +25,20 @@ const Dashboard = () => {
             <div className="dash__child">
                 <div className="dashcard__first">
                 <div><p>Username : { localStorage.getItem(('username')) } </p></div>
-                <div><p>Name</p></div>
-                <div><p>mail</p></div>
+                <div><p>Name :{name}</p></div>
+                <div><p>Email : {email}</p></div>
                 <div><p>dob : {dob}</p></div>
                 </div>
                 <div className="dashcard__second">
-                    <div> <p>github</p></div>
-                    <div><p>Linkedin</p></div>
+                    <div> <p>github : {github}</p></div>
+                    <div><p>Linkedin : {linkedin}</p></div>
                 </div>
             </div>
         {/* projects */}
         <h1 className='child__title'>Projects</h1>
             <div className="dash__child">
             <ul>
-                    <li>Contrary to popular belief, Lorem Ipsum is not simply random text.</li>
+                    <li></li>
                     <li>Contrary to popular belief, Lorem Ipsum is not simply random text.</li>
                     <li>Contrary to popular belief, Lorem Ipsum is not simply random text.</li>
                 </ul>
@@ -48,7 +48,7 @@ const Dashboard = () => {
             <h1 className='child__title'>Experience</h1>
             <div className="dash__child">
                 <ul>
-                    <li>Contrary to popular belief, Lorem Ipsum is not simply random text.</li>
+                    <li></li>
                     <li>Contrary to popular belief, Lorem Ipsum is not simply random text.</li>
                     <li>Contrary to popular belief, Lorem Ipsum is not simply random text.</li>
                 </ul>
