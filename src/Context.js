@@ -22,6 +22,20 @@ const AppProvider = ({ children }) => {
     const [email,setEmail]=useState("");
 
     useEffect(()=>{
+
+      axiosInstance.get('/user-detail/').then((res)=>{
+        setName(res.data[0].name)
+        setDob(res.data[0].dob)
+        console.log(res.data)
+        console.log(res.data[0].id)
+        
+          
+      }).then(()=>{console.log(dob)})
+
+
+  })
+
+    useEffect(()=>{
       if(localStorage.getItem('access_token'))
       {console.log(localStorage.getItem('access_token'))
         setLoggedin(true)

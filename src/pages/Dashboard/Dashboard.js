@@ -6,19 +6,13 @@ import { useState } from 'react'
 import NavBar from '../../components/Navbar/NavBar'
 import axios from 'axios'
 import axiosInstance from '../../axios'
+import {useGlobalContext} from '../../Context'
 const Dashboard = () => {
-    const [userdata,setUserdata]=useState([])
+  
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
-    useEffect(()=>{
-
-        axiosInstance.get('/user-detail/').then((res)=>{
-            setUserdata(res.data)
-            
-        }).then(()=>{console.log(userdata)})
-
-
-    })
+    const {dob,setDob,github,setGithub,inkedin,setLinkedin,description,setDescription,project,setProject,experience,setExperience,
+        skills,setSkills,name,setName,email,setEmail}=useGlobalContext()
   return (
 
     <div>
@@ -33,7 +27,7 @@ const Dashboard = () => {
                 <div><p>Username : { localStorage.getItem(('username')) } </p></div>
                 <div><p>Name</p></div>
                 <div><p>mail</p></div>
-                <div><p>dob</p></div>
+                <div><p>dob : {dob}</p></div>
                 </div>
                 <div className="dashcard__second">
                     <div> <p>github</p></div>
