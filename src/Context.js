@@ -11,6 +11,12 @@ const AppProvider = ({ children }) => {
     const [jobs,setJobs]= useState([])
     const [userid,setUserid]=useState()
 
+    const [name,setName] =useState("");
+    const [skills,setSkills]=useState("");
+    const [experience,setExperience]=useState([]);
+    const [project,setProject]=useState([]);
+    const [description,setDescription]=useState("");
+
     useEffect(()=>{
       if(localStorage.getItem('access_token'))
       {console.log(localStorage.getItem('access_token'))
