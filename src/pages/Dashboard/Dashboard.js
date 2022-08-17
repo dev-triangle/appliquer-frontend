@@ -1,13 +1,26 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Dashboard.css'
 import {Modal,Button} from 'react-bootstrap'
 import Editprofileform from '../../components/Editprofileform/Editprofileform'
 import { useState } from 'react'
 import NavBar from '../../components/Navbar/NavBar'
+import axios from 'axios'
+import axiosInstance from '../../axios'
 const Dashboard = () => {
+    const [userdata,setUserdata]=useState([])
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
+    useEffect(()=>{
+
+        axiosInstance.get('/user-detail/').then((res)=>{
+            setUserdata(res.data)
+            
+        }).then(()=>{console.log(userdata)})
+
+
+    })
   return (
+
     <div>
         <NavBar/>
         <div className='dashboard__container'>
@@ -17,7 +30,7 @@ const Dashboard = () => {
            {/* basic info */}
             <div className="dash__child">
                 <div className="dashcard__first">
-                <div><p>Username</p></div>
+                <div><p>Username : { localStorage.getItem(('username')) } </p></div>
                 <div><p>Name</p></div>
                 <div><p>mail</p></div>
                 <div><p>dob</p></div>
