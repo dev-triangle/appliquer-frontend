@@ -16,6 +16,10 @@ const AppProvider = ({ children }) => {
     const [experience,setExperience]=useState([]);
     const [project,setProject]=useState([]);
     const [description,setDescription]=useState("");
+    const [inkedin,setLinkedin]=useState("")
+    const [github,setGithub]=useState("")
+    const [dob,setDob]=useState("")
+    const [email,setEmail]=useState("");
 
     useEffect(()=>{
       if(localStorage.getItem('access_token'))
@@ -49,7 +53,11 @@ const AppProvider = ({ children }) => {
         jobs,
         setJobs,
         userid,
-        setUserid
+        setUserid,
+
+        dob,setDob,
+
+        email,setEmail,
         
     }}>{children}</AppContext.Provider>
 }
