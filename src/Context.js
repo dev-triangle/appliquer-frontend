@@ -55,7 +55,8 @@ const AppProvider = ({ children }) => {
         userid,
         setUserid,
 
-        dob,setDob,
+        dob,setDob,github,setGithub,inkedin,setLinkedin,description,setDescription,project,setProject,experience,setExperience,
+        skills,setSkills,name,setName,
 
         email,setEmail,
         
