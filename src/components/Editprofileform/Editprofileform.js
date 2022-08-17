@@ -1,14 +1,15 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {useState} from 'react'
+import {useGlobalContext} from '../../Context'
+
 
 function Editprofileform() {
 
-    const [name,setName] =useState("");
-    const [skills,setSkills]=useState("");
-    const [experience,setExperience]=useState([]);
-    const [project,setProject]=useState([]);
-    const [description,setDescription]=useState("");
+   
+
+    const {dob,setDob,github,setGithub,inkedin,setLinkedin,description,setDescription,project,setProject,experience,setExperience,
+        skills,setSkills,name,setName,email,setEmail}=useGlobalContext()
 
 
     const handleSubmit=()=>{}

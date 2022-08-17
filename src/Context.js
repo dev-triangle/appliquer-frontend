@@ -56,9 +56,7 @@ const AppProvider = ({ children }) => {
         setUserid,
 
         dob,setDob,github,setGithub,inkedin,setLinkedin,description,setDescription,project,setProject,experience,setExperience,
-        skills,setSkills,name,setName,
-
-        email,setEmail,
+        skills,setSkills,name,setName,email,setEmail,
         
     }}>{children}</AppContext.Provider>
 }
