@@ -2,6 +2,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {useState} from 'react'
 import {useGlobalContext} from '../../Context'
+import axiosInstance from '../../axios';
 
 
 function Editprofileform() {
@@ -10,9 +11,28 @@ function Editprofileform() {
 
     const {dob,setDob,github,setGithub,linkedin,setLinkedin,description,setDescription,project,setProject,experience,setExperience,
         skills,setSkills,name,setName,email,setEmail}=useGlobalContext()
+     const userdetailid=localStorage.getItem('userdetailid')
 
+    const handleSubmit=()=>{
 
-    const handleSubmit=()=>{}
+    axiosInstance.put(`/user-detail/${userdetailid}/`,
+        {
+            "profile_photo": null,
+            "skillset": skills,
+            "experience": experience,
+            "name": name,
+            "projects": project,
+            "description": description,
+            "username": localStorage.getItem('username'),
+            "linkedin": linkedin,
+            "github": github,
+            "dob": dob,
+            "email": email,
+            "user_foreign": null
+        }
+    )
+
+    }
   return (
     <Form onSubmit={handleSubmit}>
     <Form.Group>

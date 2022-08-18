@@ -33,11 +33,15 @@ const AppProvider = ({ children }) => {
         setDescription(res.data[0].description)
         setLinkedin(res.data[0].linkedin)
         setGithub(res.data[0].github)
+        localStorage.setItem('userdetailid',res.data[0].id)
         console.log(res.data)
         console.log(res.data[0].id)
         
           
-      }).then(()=>{console.log(dob)})
+      }).catch((err)=>{
+        localStorage.setItem('userdetailid',null)
+        
+      })
 
 
   },[])
