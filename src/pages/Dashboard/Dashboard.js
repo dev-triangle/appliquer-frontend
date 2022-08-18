@@ -38,9 +38,9 @@ const Dashboard = () => {
         <h1 className='child__title'>Projects</h1>
             <div className="dash__child">
             <ul>
-                    <li></li>
-                    <li>Contrary to popular belief, Lorem Ipsum is not simply random text.</li>
-                    <li>Contrary to popular belief, Lorem Ipsum is not simply random text.</li>
+                    <li>{project[0]}</li>
+                    <li>{project[1]}</li>
+                    <li>{project[2]}</li>
                 </ul>
             </div>
 

@@ -29,7 +29,7 @@ const AppProvider = ({ children }) => {
         setEmail(res.data[0].email)
         setSkills(res.data[0].skillset)
         setExperience(res.data[0].experience)
-        setProject(res.data[0].project)
+        setProject(res.data[0].projects)
         setDescription(res.data[0].description)
         setLinkedin(res.data[0].linkedin)
         setGithub(res.data[0].github)
