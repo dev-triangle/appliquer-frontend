@@ -16,6 +16,7 @@ function Editprofileform() {
   return (
     <Form onSubmit={handleSubmit}>
     <Form.Group>
+       <h5>Name</h5>
         <Form.Control
             type="text"
             placeholder="Name *"
@@ -26,6 +27,7 @@ function Editprofileform() {
         />
     </Form.Group><br/>
     <Form.Group>
+    <h5>Name</h5>
         <Form.Control
             type="text"
             placeholder="skills *"
@@ -39,6 +41,7 @@ function Editprofileform() {
    
    
     <Form.Group>
+    <h5>Name</h5>
         <Form.Control
             as="textarea"
             type="text"
@@ -50,6 +53,7 @@ function Editprofileform() {
         />
     </Form.Group><br/>
     <Form.Group>
+    <h5>Name</h5>
     <Form.Control
         as="textarea"
         type="text"
@@ -63,6 +67,7 @@ function Editprofileform() {
     />
 </Form.Group><br/>
 <Form.Group>
+<h5>Name</h5>
 <Form.Control
     type="text"
     placeholder="Description"
