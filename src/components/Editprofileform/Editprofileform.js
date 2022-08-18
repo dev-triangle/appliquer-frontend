@@ -27,10 +27,22 @@ function Editprofileform() {
         />
     </Form.Group><br/>
     <Form.Group>
+       <h5>Date of Birth</h5>
+        <Form.Control
+            type="text"
+            placeholder="DOB"
+            name="name"
+            value={dob}
+           onChange = { (e) => setDob(e.target.value)}
+            required
+        />
+    </Form.Group><br/>
+    
+    <Form.Group>
        <h5>Linkedin</h5>
         <Form.Control
             type="text"
-            placeholder="Name *"
+            placeholder="Linkedin"
             name="name"
             value={linkedin}
            onChange = { (e) => setLinkedin(e.target.value)}
@@ -38,24 +50,24 @@ function Editprofileform() {
         />
     </Form.Group><br/>
     <Form.Group>
-       <h5>Name</h5>
+       <h5>Github</h5>
         <Form.Control
             type="text"
-            placeholder="Name *"
+            placeholder="Github"
             name="name"
-            value={name}
-           onChange = { (e) => setName(e.target.value)}
+            value={github}
+           onChange = { (e) => setGithub(e.target.value)}
             required
         />
     </Form.Group><br/>
     <Form.Group>
-       <h5>Name</h5>
+       <h5>Email</h5>
         <Form.Control
             type="text"
             placeholder="Name *"
             name="name"
-            value={name}
-           onChange = { (e) => setName(e.target.value)}
+            value={email}
+           onChange = { (e) => setEmail(e.target.value)}
             required
         />
     </Form.Group><br/>
