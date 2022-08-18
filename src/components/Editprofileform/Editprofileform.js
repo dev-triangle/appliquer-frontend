@@ -8,7 +8,7 @@ function Editprofileform() {
 
    
 
-    const {dob,setDob,github,setGithub,inkedin,setLinkedin,description,setDescription,project,setProject,experience,setExperience,
+    const {dob,setDob,github,setGithub,linkedin,setLinkedin,description,setDescription,project,setProject,experience,setExperience,
         skills,setSkills,name,setName,email,setEmail}=useGlobalContext()
 
 
@@ -27,7 +27,40 @@ function Editprofileform() {
         />
     </Form.Group><br/>
     <Form.Group>
-    <h5>Name</h5>
+       <h5>Linkedin</h5>
+        <Form.Control
+            type="text"
+            placeholder="Name *"
+            name="name"
+            value={linkedin}
+           onChange = { (e) => setLinkedin(e.target.value)}
+            required
+        />
+    </Form.Group><br/>
+    <Form.Group>
+       <h5>Name</h5>
+        <Form.Control
+            type="text"
+            placeholder="Name *"
+            name="name"
+            value={name}
+           onChange = { (e) => setName(e.target.value)}
+            required
+        />
+    </Form.Group><br/>
+    <Form.Group>
+       <h5>Name</h5>
+        <Form.Control
+            type="text"
+            placeholder="Name *"
+            name="name"
+            value={name}
+           onChange = { (e) => setName(e.target.value)}
+            required
+        />
+    </Form.Group><br/>
+    <Form.Group>
+    <h5>Skills</h5>
         <Form.Control
             type="text"
             placeholder="skills *"
@@ -41,7 +74,7 @@ function Editprofileform() {
    
    
     <Form.Group>
-    <h5>Name</h5>
+    <h5>Experience</h5>
         <Form.Control
             as="textarea"
             type="text"
@@ -53,7 +86,7 @@ function Editprofileform() {
         />
     </Form.Group><br/>
     <Form.Group>
-    <h5>Name</h5>
+    <h5>Projects</h5>
     <Form.Control
         as="textarea"
         type="text"
@@ -67,7 +100,7 @@ function Editprofileform() {
     />
 </Form.Group><br/>
 <Form.Group>
-<h5>Name</h5>
+<h5>Description</h5>
 <Form.Control
     type="text"
     placeholder="Description"
