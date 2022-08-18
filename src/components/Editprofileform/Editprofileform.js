@@ -14,7 +14,8 @@ function Editprofileform() {
      const userdetailid=localStorage.getItem('userdetailid')
 
     const handleSubmit=()=>{
-
+        if(localStorage.getItem('userdetailid'))
+{
     axiosInstance.put(`/user-detail/${userdetailid}/`,
         {
             "profile_photo": null,
@@ -31,6 +32,24 @@ function Editprofileform() {
             "user_foreign": null
         }
     )
+}else{
+    axiosInstance.post(`/user-detail/`,
+        {
+            "profile_photo": null,
+            "skillset": skills,
+            "experience": experience,
+            "name": name,
+            "projects": project,
+            "description": description,
+            "username": localStorage.getItem('username'),
+            "linkedin": linkedin,
+            "github": github,
+            "dob": dob,
+            "email": email,
+            "user_foreign": null
+        }
+    )
+}
 
     }
   return (
@@ -43,7 +62,7 @@ function Editprofileform() {
             name="name"
             value={name}
            onChange = { (e) => setName(e.target.value)}
-            required
+            
         />
     </Form.Group><br/>
     <Form.Group>
@@ -54,7 +73,7 @@ function Editprofileform() {
             name="name"
             value={dob}
            onChange = { (e) => setDob(e.target.value)}
-            required
+            
         />
     </Form.Group><br/>
     
@@ -66,7 +85,7 @@ function Editprofileform() {
             name="name"
             value={linkedin}
            onChange = { (e) => setLinkedin(e.target.value)}
-            required
+        
         />
     </Form.Group><br/>
     <Form.Group>
@@ -77,7 +96,7 @@ function Editprofileform() {
             name="name"
             value={github}
            onChange = { (e) => setGithub(e.target.value)}
-            required
+            
         />
     </Form.Group><br/>
     <Form.Group>
@@ -88,7 +107,7 @@ function Editprofileform() {
             name="name"
             value={email}
            onChange = { (e) => setEmail(e.target.value)}
-            required
+            
         />
     </Form.Group><br/>
     <Form.Group>
@@ -99,7 +118,7 @@ function Editprofileform() {
             name="skills"
            value={skills}
            onChange = { (e) => setSkills(e.target.value)}
-            required
+            
         />
     </Form.Group><br/>
     
@@ -128,7 +147,6 @@ function Editprofileform() {
       
         value={project}
         onChange = { (e) => setProject(e.target.value)}
-        required
     />
 </Form.Group><br/>
 <Form.Group>
@@ -139,7 +157,7 @@ function Editprofileform() {
     name="Description"
     value={description}
     onChange = { (e) => setDescription(e.target.value)}
-    required
+    
 />
 </Form.Group><br/>
 
