@@ -6,6 +6,7 @@ import { useNavigate} from 'react-router-dom'
 
 
 import '../Login/Loginsignup.css'
+import axiosInstance from '../../axios'
 
 function Signup() {
     const navigate = useNavigate()
@@ -23,6 +24,7 @@ function Signup() {
         }).then((Response)=>{
             console.log(Response)
             if(Response.status===201){
+              
               navigate('/login')
             }
       

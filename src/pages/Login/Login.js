@@ -12,8 +12,9 @@ function Login() {
     const navigate=useNavigate();
 
     const[email, setEmail]=useState("");
-    
+    var flag=0;
     const[password,setPassword]=useState("");
+    var useritems
 
     const handleLogin=(e)=>{
         e.preventDefault();
@@ -29,12 +30,40 @@ function Login() {
         }).then(()=>
         { setLoggedin(true)
         navigate('/home')}).then(()=>{
-            axiosInstance.get(`http://127.0.0.1:8000/current-user/`).then((res)=>{
+            axiosInstance.get(`/current-user/`).then((res)=>{
                 
                 console.log(res.data.id)
                 localStorage.setItem('user-id',res.data.id)
                 localStorage.setItem('username',res.data.username)
             }).catch(error=>console.log(error))
+        axiosInstance.get('/user-detail/').then((res)=>{
+             useritems=res.data;
+
+        }).then(()=>{
+            if(useritems.length===0)
+            {
+                flag=1
+            }
+            useritems.map((useritem)=>{
+                if(useritem.id===localStorage.getItem('user-id'))
+                {
+
+                }else{
+                      flag =1
+                }
+
+            })
+        }).then(()=>{
+            if (flag===1)
+            {
+                axios.post(`/user-detail/`,{
+                    "username": localStorage.getItem('username'),
+                    "user_foreign": localStorage.getItem('user-id')
+                     
+                }).then((res)=>{console.log(res)})
+            }
+        })
+        
         })
         .catch(error=>console.log(error))
         

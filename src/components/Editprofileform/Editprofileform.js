@@ -14,6 +14,7 @@ function Editprofileform() {
      const userdetailid=localStorage.getItem('userdetailid')
 
     const handleSubmit=()=>{
+        
         if(localStorage.getItem('userdetailid'))
 {
     axiosInstance.put(`/user-detail/${userdetailid}/`,
