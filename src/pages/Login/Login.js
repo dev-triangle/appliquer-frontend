@@ -39,6 +39,7 @@ function Login() {
             }).catch(error=>console.log(error))
         axiosInstance.get('/user-detail/').then((res)=>{
              useritems=res.data;
+             console.log(res.data)
 
         }).then(()=>{
             if(useritems.length===0)
@@ -46,7 +47,7 @@ function Login() {
                 flag=1
             }
             useritems.map((useritem)=>{
-                if(useritem.id===localStorage.getItem('user-id'))
+                if(useritem.id===parseInt( localStorage.getItem('user-id')))
                 {
 
                 }else{
