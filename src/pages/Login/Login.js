@@ -5,6 +5,7 @@ import '../Login/Loginsignup.css'
 import axios from 'axios';
 import axiosInstance from '../../axios';
 import {useGlobalContext} from '../../Context'
+import baseUrl from '../../utils/urls';
 
 function Login() {
     const {loggedin,setLoggedin} =useGlobalContext()
@@ -56,10 +57,10 @@ function Login() {
         }).then(()=>{
             if (flag===1)
             {
-                axios.post(`/user-detail/`,{
+                axios.post(`${baseUrl}/user-detail/`,{
                     "username": localStorage.getItem('username'),
-                    "user_foreign": localStorage.getItem('user-id')
-                     
+                    "user_foreign": parseInt(localStorage.getItem('user-id')),
+                     "dob":"2022-06-12"
                 }).then((res)=>{console.log(res)})
             }
         })
