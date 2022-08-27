@@ -60,7 +60,7 @@ function Login() {
                 axios.post(`${baseUrl}/user-detail/`,{
                     "username": localStorage.getItem('username'),
                     "user_foreign": parseInt(localStorage.getItem('user-id')),
-                     "dob":"2022-06-12"
+                   //  "dob":"2022-06-12"
                 }).then((res)=>{console.log(res)})
             }
         })
