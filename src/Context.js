@@ -39,6 +39,9 @@ const AppProvider = ({ children }) => {
             setEmail(useritem.email)
             setSkills(useritem.skillset)
             setExperience(useritem.experience)
+            setProject(useritem.projects)
+            setGithub(useritem.github)
+            
           }
         })
       })
