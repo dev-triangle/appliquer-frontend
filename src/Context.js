@@ -21,7 +21,7 @@ const AppProvider = ({ children }) => {
     const [dob,setDob]=useState("")
     const [email,setEmail]=useState("");
     
-    
+    var useritems
 
     useEffect(()=>{
        
@@ -29,11 +29,17 @@ const AppProvider = ({ children }) => {
       
       axiosInstance.get('/user-detail/').then((res)=>{
        
-        
+        useritems=res.data;
+        console.log(res.data)
           
-      }).catch((err)=>{
-       console.log(err)
-        
+      }).then(()=>{
+        useritems.map((useritem)=>{
+          if(useritem.user_foreign===parseInt( localStorage.getItem('user-id'))){
+            setName(useritem.name)
+            setEmail(useritem.email)
+            setSkills(useritem.skillset)
+          }
+        })
       })
 
 
