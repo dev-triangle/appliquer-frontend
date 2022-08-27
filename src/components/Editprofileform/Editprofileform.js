@@ -15,11 +15,11 @@ function Editprofileform() {
 
     const handleSubmit=()=>{
         
-        if(localStorage.getItem('userdetailid'))
-{
+        
+
     axiosInstance.put(`/user-detail/${userdetailid}/`,
         {
-            "profile_photo": null,
+            
             "skillset": skills,
             "experience": experience,
             "name": name,
@@ -30,29 +30,12 @@ function Editprofileform() {
             "github": github,
             "dob": dob,
             "email": email,
-            "user_foreign": null
-        }
-    )
-}else{
-    axiosInstance.post(`/user-detail/`,
-        {
-            "profile_photo": null,
-            "skillset": skills,
-            "experience": experience,
-            "name": name,
-            "projects": project,
-            "description": description,
-            "username": localStorage.getItem('username'),
-            "linkedin": linkedin,
-            "github": github,
-            "dob": dob,
-            "email": email,
-            "user_foreign": null
+           
         }
     )
 }
 
-    }
+    
   return (
     <Form onSubmit={handleSubmit}>
     <Form.Group>
