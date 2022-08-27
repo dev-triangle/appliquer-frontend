@@ -13,11 +13,12 @@ function Login() {
     const navigate=useNavigate();
 
     const[email, setEmail]=useState("");
-    var flag=0;
+    var flag=1;
     const[password,setPassword]=useState("");
     var useritems
 
     const handleLogin=(e)=>{
+        
         const date=new Date()
         e.preventDefault();
         axiosInstance.post(`http://127.0.0.1:8000/api/token/`,{
@@ -45,22 +46,24 @@ function Login() {
         }).then(()=>{
             if(useritems.length===0)
             {
-                flag=1
+                flag=0
             }
             useritems.map((useritem)=>{
                 if(useritem.user_foreign===parseInt( localStorage.getItem('user-id')))
                 {
 
                     localStorage.setItem('userdetailid',useritem.id)
+                    flag=1
                     
+     //eql flag=1              
 
                 }else{
-                      flag =1
+                      
                 }
 
             })
         }).then(()=>{
-            if (flag===1)
+            if (flag===0)
             {
                 axios.post(`${baseUrl}/user-detail/`,{
                     "username": localStorage.getItem('username'),
