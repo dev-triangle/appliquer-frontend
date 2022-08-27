@@ -25,11 +25,12 @@ function Editprofileform() {
             "name": name,
             "projects": project,
             "description": description,
-            
+            "username": localStorage.getItem('username'),
             "linkedin": linkedin,
             "github": github,
             "dob": dob,
             "email": email,
+            "user_foreign": localStorage.getItem('user-id')
            
         }
     )
