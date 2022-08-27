@@ -48,8 +48,8 @@ const Dashboard = () => {
             <h1 className='child__title'>Experience</h1>
             <div className="dash__child">
                 <ul>
-                    <li>{experience[0]}</li>
-                    <li>{experience[1]}</li>
+                     <li>{experience[0]}</li>
+                     <li>{experience[1]}</li>
                     <li>{experience[2]}</li>
                 </ul>
             </div>

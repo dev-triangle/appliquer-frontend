@@ -8,7 +8,7 @@ import {useGlobalContext} from '../../Context'
 import baseUrl from '../../utils/urls';
 
 function Login() {
-    const {loggedin,setLoggedin} =useGlobalContext()
+    const {setLoggedin} =useGlobalContext()
    
     const navigate=useNavigate();
 
@@ -18,6 +18,7 @@ function Login() {
     var useritems
 
     const handleLogin=(e)=>{
+        const date=new Date()
         e.preventDefault();
         axiosInstance.post(`http://127.0.0.1:8000/api/token/`,{
             "email": email,
@@ -64,7 +65,7 @@ function Login() {
                 axios.post(`${baseUrl}/user-detail/`,{
                     "username": localStorage.getItem('username'),
                     "user_foreign": parseInt(localStorage.getItem('user-id')),
-                   //  "dob":"2022-06-12"
+                    
                 }).then((res)=>{console.log(res)})
             }
         })
