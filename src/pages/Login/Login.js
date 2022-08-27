@@ -47,8 +47,10 @@ function Login() {
                 flag=1
             }
             useritems.map((useritem)=>{
-                if(useritem.id===parseInt( localStorage.getItem('user-id')))
+                if(useritem.user_foreign===parseInt( localStorage.getItem('user-id')))
                 {
+
+                    localStorage.setItem('userdetailid',useritem.id)
 
                 }else{
                       flag =1

@@ -20,31 +20,32 @@ const AppProvider = ({ children }) => {
     const [github,setGithub]=useState("")
     const [dob,setDob]=useState("")
     const [email,setEmail]=useState("");
+    
 
-  //   useEffect(()=>{
-
-  //     axiosInstance.get('/user-detail/').then((res)=>{
-  //       setName(res.data[0].name)
-  //       setDob(res.data[0].dob)
-  //       setEmail(res.data[0].email)
-  //       setSkills(res.data[0].skillset)
-  //       setExperience(res.data[0].experience)
-  //       setProject(res.data[0].projects)
-  //       setDescription(res.data[0].description)
-  //       setLinkedin(res.data[0].linkedin)
-  //       setGithub(res.data[0].github)
-  //       localStorage.setItem('userdetailid',res.data[0].id)
-  //       console.log(res.data)
-  //       console.log(res.data[0].id)
+    useEffect(()=>{
+     var i =parseInt(localStorage.getItem('userdetailid'))
+      axiosInstance.get('/user-detail/').then((res)=>{
+        setName(res.data[0].name)
+        setDob(res.data[0].dob)
+        setEmail(res.data[0].email)
+        setSkills(res.data[0].skillset)
+        setExperience(res.data[0].experience)
+        setProject(res.data[0].projects)
+        setDescription(res.data[0].description)
+        setLinkedin(res.data[0].linkedin)
+        setGithub(res.data[0].github)
+       
+        console.log(res.data)
+      
         
           
-  //     }).catch((err)=>{
-  //       localStorage.setItem('userdetailid',null)
+      }).catch((err)=>{
+       console.log(err)
         
-  //     })
+      })
 
 
-  // },[])
+  },[])
 
     useEffect(()=>{
       if(localStorage.getItem('access_token'))
