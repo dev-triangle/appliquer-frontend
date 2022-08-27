@@ -37,21 +37,24 @@ const Dashboard = () => {
         {/* projects */}
         <h1 className='child__title'>Projects</h1>
             <div className="dash__child">
-            <ul>
+           {(project)?(( <ul>
                     <li>{project[0]}</li>
                     <li>{project[1]}</li>
                     <li>{project[2]}</li>
                 </ul>
+  )):((null))}
             </div>
 
             {/* experience */}
             <h1 className='child__title'>Experience</h1>
             <div className="dash__child">
+            { (experience)?((
                 <ul>
                      <li>{experience[0]}</li>
                      <li>{experience[1]}</li>
                     <li>{experience[2]}</li>
                 </ul>
+   )):((null)) }
             </div>
 
             {/* description */}
