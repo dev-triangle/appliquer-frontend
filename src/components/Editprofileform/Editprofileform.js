@@ -13,9 +13,9 @@ function Editprofileform() {
         skills,setSkills,name,setName,email,setEmail}=useGlobalContext()
      const userdetailid=localStorage.getItem('userdetailid')
 
-    const handleSubmit=()=>{
+    const handleSubmit=(e)=>{
         
-        
+        e.preventDefault();
 
     axiosInstance.put(`/user-detail/${userdetailid}/`,
         {
@@ -25,7 +25,7 @@ function Editprofileform() {
             "name": name,
             "projects": project,
             "description": description,
-            "username": localStorage.getItem('username'),
+            
             "linkedin": linkedin,
             "github": github,
             "dob": dob,
