@@ -41,6 +41,9 @@ const AppProvider = ({ children }) => {
             setExperience(useritem.experience)
             setProject(useritem.projects)
             setGithub(useritem.github)
+            setDescription(useritem.description)
+            setLinkedin(useritem.linkedin)
+            setDob(useritem.dob)
             
           }
         })
