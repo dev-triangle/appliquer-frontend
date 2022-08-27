@@ -21,22 +21,14 @@ const AppProvider = ({ children }) => {
     const [dob,setDob]=useState("")
     const [email,setEmail]=useState("");
     
+    
 
     useEffect(()=>{
-     var i =parseInt(localStorage.getItem('userdetailid'))
-      axiosInstance.get('/user-detail/').then((res)=>{
-        setName(res.data[0].name)
-        setDob(res.data[0].dob)
-        setEmail(res.data[0].email)
-        setSkills(res.data[0].skillset)
-        setExperience(res.data[0].experience)
-        setProject(res.data[0].projects)
-        setDescription(res.data[0].description)
-        setLinkedin(res.data[0].linkedin)
-        setGithub(res.data[0].github)
        
-        console.log(res.data)
+     
       
+      axiosInstance.get('/user-detail/').then((res)=>{
+       
         
           
       }).catch((err)=>{
@@ -80,6 +72,7 @@ const AppProvider = ({ children }) => {
         setJobs,
         userid,
         setUserid,
+      
 
         dob,setDob,github,setGithub,linkedin,setLinkedin,description,setDescription,project,setProject,experience,setExperience,
         skills,setSkills,name,setName,email,setEmail,
