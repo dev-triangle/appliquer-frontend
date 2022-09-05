@@ -63,12 +63,15 @@ useEffect(()=>{
             "user_foreign": parseInt(localStorage.getItem('user-id')),
             "job_foreign": job.id,
           }).then((res)=>{
-    
+            if(res){
+              window.alert("Applied")
+            }
     console.log(res.data)
           }).catch((error)=>{
 
     console.log(error);
-    alert("Please login");
+    if(loggedin===false){alert("please log in")}
+    else { }
 
   })
 
